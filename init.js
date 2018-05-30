@@ -330,8 +330,9 @@ var spawnPoolWorkers = function(){
 var startCliListener = function(){
 
     var cliPort = portalConfig.cliPort;
+    var cliBind = portalConfig.cliBind;
 
-    var listener = new CliListener(cliPort);
+    var listener = new CliListener(cliPort, cliBind);
     listener.on('log', function(text){
         logger.debug('Master', 'CLI', text);
     }).on('command', function(command, params, options, reply){
