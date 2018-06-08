@@ -28,7 +28,7 @@ var listener = module.exports = function listener(port, bind){
 
                 });
                 c.on('error', function () {
-                    
+
                 });
             }
             catch(e){
@@ -36,7 +36,7 @@ var listener = module.exports = function listener(port, bind){
             }
 
         }).listen(port, bind, function() {
-            emitLog('CLI listening on port ' + port)
+            emitLog('CLI listening on ' + bind + ':' + port)
         });
     }
 
